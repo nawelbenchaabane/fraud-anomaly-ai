@@ -8,6 +8,10 @@ The core design principle is simple:
 > The LLM does not detect fraud; it summarizes supplied evidence for a human analyst.**
 
 ---
+## Architecture
+
+![Fraud Anomaly AI architecture](assets/architecture.png)
+---
 
 ## Project overview
 
