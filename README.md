@@ -7,11 +7,7 @@ The core design principle is simple:
 > **Machine-learning models detect and score anomalies.  
 > The LLM does not detect fraud; it summarizes supplied evidence for a human analyst.**
 
----
-## Architecture
 
-![Fraud Anomaly AI architecture](assets/architecture.png)
----
 
 ## Project overview
 
@@ -58,38 +54,10 @@ This project focuses on those questions rather than optimizing a single benchmar
 ---
 
 ## System architecture
+![Fraud Anomaly AI architecture](assets/architecture.png)
 
-```text
-Raw BankSim transaction
-        ↓
-Saved preprocessing pipeline
-        ↓
-┌─────────────────────────────┐
-│ Isolation Forest            │
-│ One-Class SVM               │
-│ Autoencoder                 │
-└─────────────────────────────┘
-        ↓
-Continuous anomaly scores
-        ↓
-Validation-referenced percentiles
-+ operational thresholds
-        ↓
-LOW / MEDIUM / HIGH
-investigation routing
-        ↓
-Historical/contextual explanation
-+ Autoencoder reconstruction evidence
-        ↓
-Structured investigation packet
-        ↓
-┌─────────────────────────────┐
-│ Deterministic local report  │
-│ Optional LLM report         │
-└─────────────────────────────┘
-        ↓
-Human analyst
-```
+The architecture deliberately separates anomaly detection, explainability,
+language generation, and the final human decision.
 
 ---
 
@@ -441,6 +409,10 @@ Final reproducible runs:
 | One-Class SVM | 0.9249 | **0.4473** | 0.9255 | **0.4370** |
 | Autoencoder | 0.9658 | 0.1801 | 0.9661 | 0.1752 |
 
+### Visual comparison
+
+![Final model comparison](assets/model_comparison.png)
+
 ### Interpretation
 
 - Isolation Forest and Autoencoder provide the strongest global ROC ranking.
@@ -746,6 +718,15 @@ Semantic checks include:
 - HIGH uses priority analyst review
 - no affirmative confirmed-fraud claim
 - anomaly scores are not interpreted as fraud probabilities
+
+---
+## Investigation example
+
+The following HIGH-risk example shows how detector evidence is converted
+into an analyst-facing investigation without treating anomaly scores as
+fraud probabilities or declaring confirmed fraud.
+
+![High-risk investigation example](assets/high_risk_investigation_example.png)
 
 ---
 
