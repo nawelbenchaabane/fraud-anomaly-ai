@@ -1,0 +1,15 @@
+{
+  "input_dim": 78,
+  "hidden_dim_1": 32,
+  "bottleneck_dim": 12,
+  "hidden_dim_2": 32,
+  "activation": "ReLU",
+  "loss": "MSELoss",
+  "optimizer": "Adam",
+  "learning_rate": 0.001,
+  "batch_size": 1024,
+  "max_epochs": 20,
+  "patience": 3,
+  "random_state": 42,
+  "excluded_feature": "num__step"
+}

@@ -1,0 +1,7 @@
+Model,Strategy,Frauds Detected,Frauds Missed,False Alerts
+Isolation Forest,Max F1,552,648,2058
+Isolation Forest,Recall >= 80%,979,221,6327
+One-Class SVM,Max F1,458,742,342
+One-Class SVM,Recall >= 80%,954,246,7971
+Autoencoder,Max F1,347,853,812
+Autoencoder,Recall >= 80%,1127,73,7421

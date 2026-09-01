@@ -1,0 +1,4 @@
+Operational Goal,Recommended Model,Reason
+High-confidence investigations,One-Class SVM,Highest precision and F1 with the lowest false-positive and alert rates.
+Balanced high-recall screening,Isolation Forest,Strong recall with lower operational cost than the maximum-coverage Autoencoder mode.
+Maximum fraud coverage,Autoencoder,Highest recall; detects about 94% of fraud in the final test run.

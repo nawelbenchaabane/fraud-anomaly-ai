@@ -1,0 +1,50 @@
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+.pytest_cache/
+.coverage
+htmlcov/
+
+# Virtual environments
+.venv/
+venv/
+env/
+
+# Jupyter
+.ipynb_checkpoints/
+
+# IDE / OS
+.vscode/
+.idea/
+.DS_Store
+Thumbs.db
+
+# Secrets
+.env
+.env.*
+*.key
+*.pem
+
+# Raw / processed datasets
+data/raw/*
+data/processed/*
+
+# Keep folder structure
+!data/raw/.gitkeep
+!data/processed/.gitkeep
+
+# Generated runtime outputs
+results/cli/*
+results/llm_reports/*
+results/llm_validation/*
+
+# Keep folder structure
+!results/cli/.gitkeep
+!results/llm_reports/.gitkeep
+!results/llm_validation/.gitkeep
+
+# Optional local temporary files
+*.log
+*.tmp

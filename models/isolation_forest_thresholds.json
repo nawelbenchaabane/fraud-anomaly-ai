@@ -1,0 +1,15 @@
+{
+  "max_f1": {
+    "threshold": -0.0701127042784469,
+    "validation_precision": 0.21054702872884692,
+    "validation_recall": 0.44583333333333336,
+    "validation_f1": 0.28601978080683504
+  },
+  "high_recall": {
+    "target_recall": 0.8,
+    "threshold": -0.0830482062100314,
+    "validation_precision": 0.13677639046538026,
+    "validation_recall": 0.8033333333333333,
+    "validation_f1": 0.2337536372451442
+  }
+}
