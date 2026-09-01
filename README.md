@@ -7,7 +7,7 @@ The core design principle is simple:
 > **Machine-learning models detect and score anomalies.  
 > The LLM does not detect fraud; it summarizes supplied evidence for a human analyst.**
 
-
+---
 
 ## Project overview
 
@@ -34,6 +34,17 @@ The project then adds:
 
 The final system is designed as an **investigation-support pipeline**, not an autonomous fraud-decision engine.
 
+## Portfolio highlights
+
+- **594,643** BankSim transactions with a temporal train/validation/test split
+- **3 final anomaly detectors** in the inference pipeline
+- **0.4370 test PR-AUC** for One-Class SVM
+- **93.92% test recall** for the Autoencoder high-recall operating point
+- Validation-referenced score percentiles for cross-model routing
+- Explainable LOW / MEDIUM / HIGH investigation packets
+- Deterministic and optional LLM analyst reports
+- Automated semantic checks for all three risk tiers
+
 ---
 
 ## Why this project?
@@ -54,10 +65,11 @@ This project focuses on those questions rather than optimizing a single benchmar
 ---
 
 ## System architecture
+
 ![Fraud Anomaly AI architecture](assets/architecture.png)
 
 The architecture deliberately separates anomaly detection, explainability,
-language generation, and the final human decision.
+language generation, semantic validation, and the final human decision.
 
 ---
 
@@ -720,6 +732,7 @@ Semantic checks include:
 - anomaly scores are not interpreted as fraud probabilities
 
 ---
+
 ## Investigation example
 
 The following HIGH-risk example shows how detector evidence is converted
